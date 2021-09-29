@@ -9,11 +9,11 @@ import ListMovement from './components/Movement/ListMovement';
 import AddMovement from './components/Movement/AddMovement';
 import ProductList from './components/Product/ProductList';
 import addProduct from './components/Product/addProduct';
-import Sidebar from './components/sidebar/Sidebar';
 import SubCategory from './components/SubCategory/SubCategory';
 import AddSubcategory from './components/SubCategory/AddSubcategory';
 import AddMovementSupplyReception from './components/Movement/AddMovementSupplyReception';
 import AddMovementDestruction from './components/Movement/AddMovementDestruction';
+import AddMovementInteriorProduction from './components/Movement/AddMovementIneriorProduction';
 
 function App() {
   return (
@@ -50,6 +50,10 @@ function App() {
             <Route
               path="/AddDestruction"
               component={AddMovementDestruction}
+            ></Route>
+            <Route
+              path="/AddInternalProduction"
+              component={AddMovementInteriorProduction}
             ></Route>
           </Switch>
         </Router>

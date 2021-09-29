@@ -68,17 +68,24 @@ class ListMovement extends Component {
                 <td style={{ backgroundColor: '#ADD8E6' }}>
                   {movement.movType}
                 </td>
-                <div className="list">
+                <table className="table table-success table-striped">
+                  <thead>
+                    <th>Id Product</th>
+                    <th>Title Product</th>
+                    <th>Quantity Product</th>
+                    <th>Barcode Product</th>
+                  </thead>
                   {movement.movProducts?.map((item) => {
                     return (
                       <tr key={item.idProduct}>
                         <td>{item.idProduct}</td>
                         <td>{item.titleProduct}</td>
                         <td>{item.quantityProduct}</td>
+                        <td>{item.barcode}</td>
                       </tr>
                     );
                   })}
-                </div>
+                </table>
                 <td>
                   <button className="btn btn-danger"> Archive</button>
                 </td>

@@ -2,9 +2,12 @@ import axios from 'axios';
 const Movement_Rest_Api = 'http://localhost:8090/utss/tn/AllMovements';
 const Add_Movement_Rest_Api = 'http://localhost:8090/utss/tn/addMovement';
 const Add_Movement_Rest_Api_Supply_Reception =
-  'http://localhost:8090/utss/tn/supplyReception';
+  'http://localhost:8090/utss/tn/supplyReception/';
 const Add_Movement_Rest_Api_Destruction =
   'http://localhost:8090/utss/tn/destruction';
+
+const AddMovement_Rest_Api_Internal_Production =
+  'http://localhost:8090/utss/tn/inetrnalProduction/';
 
 class MovementServices {
   getAllMovement() {
@@ -18,6 +21,13 @@ class MovementServices {
   SupplyReception(Movement, idStock) {
     return axios.post(
       Add_Movement_Rest_Api_Supply_Reception + idStock,
+      Movement
+    );
+  }
+
+  InternalProduction(Movement, idStock) {
+    return axios.post(
+      AddMovement_Rest_Api_Internal_Production + idStock,
       Movement
     );
   }
