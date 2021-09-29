@@ -73,17 +73,25 @@ class StockComponent extends React.Component {
                 <td>{stock.stockType}</td>
                 <td>{stock.maxStock}</td>
                 <td>{stock.minStock}</td>
-                <ul className="list">
+                <table className="table table-success table-striped">
+                  <thead>
+                    <th>Id Product</th>
+                    <th>Title Product</th>
+                    <th>Quantity Product</th>
+                    <th>Barcode Product</th>
+                  </thead>
+
                   {stock.stockProducts?.map((item) => {
                     return (
-                      <li key={item.idProduct}>
+                      <tr key={item.idProduct}>
                         <td>{item.idProduct}</td>
                         <td>{item.titleProduct}</td>
                         <td>{item.quantityProduct}</td>
-                      </li>
+                        <td>{item.barcode}</td>
+                      </tr>
                     );
                   })}
-                </ul>
+                </table>
                 <td>
                   <button
                     className="btn btn-danger"

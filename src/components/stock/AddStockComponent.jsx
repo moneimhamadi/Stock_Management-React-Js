@@ -23,7 +23,6 @@ class AddStockComponent extends Component {
     console.log('Stock =>', +JSON.stringify(stock));
 
     StockServices.addStock(stock).then((res) => {
-      
       this.props.history.push('/all-stocks');
       alert('Stock Added Successfully');
       console.log('StockInPut', res);
@@ -36,7 +35,7 @@ class AddStockComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="field">
         <h1>ADD STOCK FORM</h1>
 
         <form action="">

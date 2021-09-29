@@ -1,33 +1,33 @@
+import axios from 'axios';
+const Movement_Rest_Api = 'http://localhost:8090/utss/tn/AllMovements';
+const Add_Movement_Rest_Api = 'http://localhost:8090/utss/tn/addMovement';
+const Add_Movement_Rest_Api_Supply_Reception =
+  'http://localhost:8090/utss/tn/supplyReception';
+const Add_Movement_Rest_Api_Destruction =
+  'http://localhost:8090/utss/tn/destruction';
 
-import axios from "axios";
-const Movement_Rest_Api= 'http://localhost:8090/utss/tn/AllMovements';
-const Add_Movement_Rest_Api= 'http://localhost:8090/utss/tn/addMovement';
-// const Get_One_Stock_By_Id='http://localhost:8090/utss/tn/OneStock';
-// const Update_Stock='http://localhost:8090/utss/tn/updateStock';
-// const Delete_Stock= 'http://localhost:8090/utss/tn/deleteStock';
+class MovementServices {
+  getAllMovement() {
+    return axios.get(Movement_Rest_Api);
+  }
 
-class MovementServices{
+  addMovement(Movement) {
+    return axios.post(Add_Movement_Rest_Api, Movement);
+  }
 
-    getAllMovement(){
-      return  axios.get(Movement_Rest_Api);
-    }
+  SupplyReception(Movement, idStock) {
+    return axios.post(
+      Add_Movement_Rest_Api_Supply_Reception + idStock,
+      Movement
+    );
+  }
 
-    addMovement(Movement){
-      return axios.post(Add_Movement_Rest_Api, Movement);
-    }
-
-    // getStockById(stockId){
-    //   return axios.get(Get_One_Stock_By_Id+'/'+stockId);
-    // }
-
-    // updateStocK(stock,StockId){
-    //   return axios.put(Update_Stock+'/'+stock,StockId);
-    // }
-
-    // deleteStockById(stockId){
-    //   return axios.delete(Delete_Stock+'/'+stockId);
-    // }
-
+  Destruction(Movement, idStock) {
+    return axios.put(
+      Add_Movement_Rest_Api_Destruction + '/' + idStock,
+      Movement
+    );
+  }
 }
 
 export default new MovementServices();

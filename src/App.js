@@ -12,6 +12,8 @@ import addProduct from './components/Product/addProduct';
 import Sidebar from './components/sidebar/Sidebar';
 import SubCategory from './components/SubCategory/SubCategory';
 import AddSubcategory from './components/SubCategory/AddSubcategory';
+import AddMovementSupplyReception from './components/Movement/AddMovementSupplyReception';
+import AddMovementDestruction from './components/Movement/AddMovementDestruction';
 
 function App() {
   return (
@@ -41,6 +43,14 @@ function App() {
             <Route path="/add-products" component={addProduct}></Route>
             <Route path="/all-subcategories" component={SubCategory}></Route>
             <Route path="/add-subcategory" component={AddSubcategory}></Route>
+            <Route
+              path="/AddSupplyReception"
+              component={AddMovementSupplyReception}
+            ></Route>
+            <Route
+              path="/AddDestruction"
+              component={AddMovementDestruction}
+            ></Route>
           </Switch>
         </Router>
         <footer>&copy; Copyright 2021 All Rights Reserved</footer>
