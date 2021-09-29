@@ -9,12 +9,16 @@ import ListMovement from './components/Movement/ListMovement';
 import AddMovement from './components/Movement/AddMovement';
 import ProductList from './components/Product/ProductList';
 import addProduct from './components/Product/addProduct';
+import Sidebar from './components/sidebar/Sidebar';
+import SubCategory from './components/SubCategory/SubCategory';
+import AddSubcategory from './components/SubCategory/AddSubcategory';
 
 function App() {
   return (
     <>
       <img src="../Images/UTSSlogo.jpg" width="200px" height="100px" />
       <div className="App">
+        {/* <Sidebar /> */}
         <Router>
           <Switch>
             <Route path="/all-Movements" exact component={ListMovement}></Route>
@@ -35,6 +39,8 @@ function App() {
             <Route path="/add-movement" component={AddMovement}></Route>
             <Route path="/all-products" component={ProductList}></Route>
             <Route path="/add-products" component={addProduct}></Route>
+            <Route path="/all-subcategories" component={SubCategory}></Route>
+            <Route path="/add-subcategory" component={AddSubcategory}></Route>
           </Switch>
         </Router>
         <footer>&copy; Copyright 2021 All Rights Reserved</footer>

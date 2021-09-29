@@ -53,6 +53,17 @@ export default class ProductList extends Component {
                   <td>{product.priceProduct}</td>
                   <td>{product.barcode}</td>
                   <td>{product.weightProduct}</td>
+                  {/* <td>
+                    <img
+                      src={
+                        'http:localhost:8090/utss/tn/Imgarticles/' +
+                        product.idProduct
+                      }
+                      width="100"
+                      height="150"
+                      alt="..."
+                    />
+                  </td> */}
 
                   <td>
                     {/* <button className="btn btn-danger" onClick={()=>this.deleteStock(stock.idStock)} >Delete</button>
