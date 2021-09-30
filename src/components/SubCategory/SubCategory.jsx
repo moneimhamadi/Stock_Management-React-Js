@@ -49,7 +49,7 @@ class SubCategory extends React.Component {
             <tr>
               <th>idSubCategory</th>
               <th>nameSubCAtegory</th>
-              <th>ListProducts</th>
+              <th>SubCategory Products</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -58,17 +58,31 @@ class SubCategory extends React.Component {
               <tr key={subcategory.idSubCategory}>
                 <td>{subcategory.idSubCategory}</td>
                 <td>{subcategory.nameSubCategory}</td>
-                <ul className="list">
+                <table className="table table-success table-striped">
+                  <thead>
+                    <th>Id Product</th>
+                    <th>Title Product</th>
+                    <th>Quantity Product</th>
+                    <th>
+                      Barcode Product{' '}
+                      <img
+                        src="../Images/barcode.jpg"
+                        width="50px"
+                        height="35px"
+                      />
+                    </th>
+                  </thead>
                   {subcategory.products?.map((item) => {
                     return (
-                      <li key={item.idProduct}>
+                      <tr key={item.idProduct}>
                         <td>{item.idProduct}</td>
                         <td>{item.titleProduct}</td>
                         <td>{item.quantityProduct}</td>
-                      </li>
+                        <td>{item.barcode}</td>
+                      </tr>
                     );
                   })}
-                </ul>
+                </table>
                 <td>
                   <button
                     className="btn btn-danger"
@@ -78,8 +92,6 @@ class SubCategory extends React.Component {
                   >
                     Delete
                   </button>
-
-                
                 </td>
               </tr>
             ))}

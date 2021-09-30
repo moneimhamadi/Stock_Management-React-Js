@@ -14,6 +14,7 @@ import {
   WorkOutline,
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import ProductList from '../Product/ProductList';
 
 export default function Sidebar() {
   return (
@@ -22,7 +23,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Stock managment</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/"  className="link"  >
               <li className="sidebarListItem active">
                 <LineStyle className="sidebarIcon" />
                 accueil
@@ -47,9 +48,9 @@ export default function Sidebar() {
         </div>
 
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Add products to a stock</h3>
+          <h3 className="sidebarTitle">Product Management</h3>
           <ul className="sidebarList">
-            <Link to="/addprod" className="link">
+            <Link to="/all-products"  className="link" >
               <li className="sidebarListItem ">
                 <PermIdentity />
                 New Product ?

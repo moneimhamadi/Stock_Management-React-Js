@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import StockComponent from './components/stock/StockComponent';
 import AddStockComponent from './components/stock/AddStockComponent';
@@ -14,14 +13,20 @@ import AddSubcategory from './components/SubCategory/AddSubcategory';
 import AddMovementSupplyReception from './components/Movement/AddMovementSupplyReception';
 import AddMovementDestruction from './components/Movement/AddMovementDestruction';
 import AddMovementInteriorProduction from './components/Movement/AddMovementIneriorProduction';
-
+import AddMovementToOtherStore from './components/Movement/AddMovementToOtherStore';
+import Sidebar from './components/sidebar/Sidebar';
+import Nav from './components/sidebar/Nav';
 function App() {
   return (
     <>
-      <img src="../Images/UTSSlogo.jpg" width="200px" height="100px" />
+    
+      <div>
+        <img src="../Images/UTSSlogo.jpg" width="200px" height="100px" />
+      </div>
+
       <div className="App">
-        {/* <Sidebar /> */}
         <Router>
+          <Nav />
           <Switch>
             <Route path="/all-Movements" exact component={ListMovement}></Route>
             <Route path="/all-stocks" exact component={StockComponent}></Route>
@@ -55,10 +60,18 @@ function App() {
               path="/AddInternalProduction"
               component={AddMovementInteriorProduction}
             ></Route>
+            <Route
+              path="/AddToOtherStore"
+              component={AddMovementToOtherStore}
+            ></Route>
+            <Route path="/"></Route>
           </Switch>
         </Router>
-        <footer>&copy; Copyright 2021 All Rights Reserved</footer>
+        <footer>
+          UTSS Stock Management APP &copy; Copyright 2021 All Rights Reserved
+        </footer>
       </div>
+      
     </>
   );
 }

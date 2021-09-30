@@ -53,11 +53,11 @@ class ListMovement extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>IdMovement</th>
+              <th>#</th>
               <th>Order Date</th>
               <th>Movement Type</th>
               <th>Movement Products</th>
-              <th>Actions</th>
+              {/* <th>Actions</th> */}
             </tr>
           </thead>
           <tbody>
@@ -70,7 +70,7 @@ class ListMovement extends Component {
                 </td>
                 <table className="table table-success table-striped">
                   <thead>
-                    <th>Id Product</th>
+                    <th>#</th>
                     <th>Title Product</th>
                     <th>Quantity Product</th>
                     <th>Barcode Product</th>
@@ -86,9 +86,9 @@ class ListMovement extends Component {
                     );
                   })}
                 </table>
-                <td>
+                {/* <td>
                   <button className="btn btn-danger"> Archive</button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>
